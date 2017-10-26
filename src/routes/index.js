@@ -9,7 +9,7 @@ import {
   Login,
 } from '../components';
 
-const InstaCloneRouter = () => (
+const BaseRouter = () => (
   <Router>
     <div>
       <Route exact path="/" component={Home}/>
@@ -19,4 +19,4 @@ const InstaCloneRouter = () => (
   </Router>
 );
 
-export default InstaCloneRouter;
+export default BaseRouter;

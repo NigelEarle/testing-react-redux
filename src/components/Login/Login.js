@@ -4,7 +4,8 @@ import { Header } from '../.';
 import {
   addEmail,
   addPassword,
-  submitCreds
+  submitLoginSuccess,
+  submitLoginFail,
 } from '../../actions/user';
 
 class Login extends Component {
@@ -14,20 +15,25 @@ class Login extends Component {
   };
 
   handleInputChange = ({ target }) => {
-    const { addEmail, addPassword } = this.props;
+    const {
+      addEmail,
+      addPassword,
+    } = this.props;
     if (target.name === 'email') {
-      // call email action
+      // email action
       addEmail(target.email);
     }
 
     if (target.name === 'password') {
-      // call password action
+      // password action
       addPassword(target.password);
     }
   }
 
   submitCreds = (e) => {
-    console.log(e)
+    // if email and password matches user.email/password submit success
+    // else submitFail
+
   }
 
   render() {
@@ -44,9 +50,10 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = ({ email, user}) => (
+const mapStateToProps = ({ email, password, user }) => (
   {
     email,
+    password,
     user,
   }
 );
@@ -59,8 +66,11 @@ const mapDispatchToProps = (dispatch, props) => (
     addPassword(char) {
       dispatch(addPassword(char))
     },
-    submitCreds() {
-      dispatch(submitCreds())
+    submitCredsSuccess() {
+      dispatch(submitLoginSuccess())
+    },
+    submitCredsFail() {
+      dispatch(submitLoginFail())
     }
   }
 );

@@ -58,6 +58,7 @@
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
+      "<rootDir>/src/shim.js",
       "<rootDir>/src/setupTests.js"
     ],
     "testMatch": [

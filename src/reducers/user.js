@@ -1,13 +1,17 @@
 import {
   LOGIN_SUCCESS,
-  LOGIN_FAIL
+  LOGIN_FAIL,
+  ADD_EMAIL,
+  ADD_PASSWORD,
 } from '../actions/user';
 
 const initialUserState = {
   error: null,
+  emailToTest: 'user@email.com',
+  passwordToTest: '12345',
   user: {
-    email: 'user@email.com',
-    password: '123456'
+    email: '',
+    password: ''
   }
 };
 
@@ -19,6 +23,16 @@ const userReducer = (state = initialUserState, action = {}) => {
       return {
         ...state,
         error: 'Wrong Email or Password. Try again.',
+      }
+    case ADD_EMAIL:
+      return {
+        ...state,
+        email: action.data
+      }
+    case ADD_PASSWORD:
+      return {
+        ...state,
+        pasword: action.data
       }
     default:
       return state;

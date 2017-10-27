@@ -1,9 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Header } from '../.';
-const Login = () => (
-  <div>
-    <Header />
-    <h1>Login</h1>
-  </div>
+
+class Login extends Component {
+
+  static propTypes = {
+
+  };
+
+  submitCreds = (e) => {
+    console.log(e)
+  }
+
+  render() {
+    return (
+      <div>
+        <Header/>
+        <form onSubmit={this.submitCreds}>
+          <input type="text" name="email" placeholder="Email" autoFocus/>
+          <input type="text" name="password" placeholder="Password"/>
+          <input type="submit"/>
+        </form>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state) => (
+  {}
 );
-export default Login;
+  
+const mapDispatchToProps = () => (
+  {}
+)
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login);

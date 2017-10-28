@@ -21,13 +21,11 @@ class Login extends Component {
     } = this.props;
     if (target.name === 'email') {
       // email action
-      console.log('email', target.value)
       addEmail(target.value);
     }
 
     if (target.name === 'password') {
       // password action
-      console.log('password', target.value)
       addPassword(target.value);
     }
   }

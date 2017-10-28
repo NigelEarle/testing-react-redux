@@ -21,16 +21,19 @@ class Login extends Component {
     } = this.props;
     if (target.name === 'email') {
       // email action
-      addEmail(target.email);
+      console.log('email', target.value)
+      addEmail(target.value);
     }
 
     if (target.name === 'password') {
       // password action
-      addPassword(target.password);
+      console.log('password', target.value)
+      addPassword(target.value);
     }
   }
 
   submitCreds = (e) => {
+    e.preventDefault();
     // if email and password matches user.email/password submit success
     // else submitFail
 

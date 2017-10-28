@@ -27,12 +27,12 @@ const userReducer = (state = initialUserState, action = {}) => {
     case ADD_EMAIL:
       return {
         ...state,
-        email: concatString(action.data),
+        email: concatString(state, 'email', action.data),
       }
     case ADD_PASSWORD:
       return {
         ...state,
-        pasword: concatString(action.data)
+        pasword: concatString(state, 'password', action.data)
       }
     default:
       return state;
@@ -40,7 +40,7 @@ const userReducer = (state = initialUserState, action = {}) => {
 }
 
 const concatString = (state, key, char) => {
-  return state[key].concat(char);
+  return state.user[key].concat(char);
 };
 
 export default userReducer;

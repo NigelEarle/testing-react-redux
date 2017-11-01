@@ -42,8 +42,19 @@ class Login extends Component {
       <div>
         <Header/>
         <form onSubmit={this.submitCreds}>
-          <input type="text" name="email" onChange={this.handleInputChange} placeholder="Email" autoFocus/>
-          <input type="text" name="password" onChange={this.handleInputChange} placeholder="Password"/>
+          <input
+            type="text"
+            name="email"
+            onChange={this.handleInputChange}
+            placeholder="Email"
+            autoFocus
+          />
+          <input
+            type="text"
+            name="password"
+            onChange={this.handleInputChange}
+            placeholder="Password"
+          />
           <input type="submit"/>
         </form>
       </div>

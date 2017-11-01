@@ -3,5 +3,6 @@ import Login from '../Login';
 import { shallow } from 'enzyme';
 
 it('should exist', () => {
-  shallow(<Login/>)
+  const wrapper = shallow(<Login/>).dive();
+  console.log(wrapper)
 });

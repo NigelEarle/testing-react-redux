@@ -62,13 +62,11 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = ({ email, password, user }) => (
-  {
-    email,
-    password,
-    user,
-  }
-);
+const mapStateToProps = ({ email, password, user }) => ({
+  email,
+  password,
+  user,
+});
   
 const mapDispatchToProps = (dispatch, props) => (
   {

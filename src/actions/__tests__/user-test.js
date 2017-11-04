@@ -22,4 +22,21 @@ describe('User Actions', () => {
     };
     expect(actions.addPassword('p')).toEqual(expectedAction);
   });
+
+  test('should submit LOGIN_SUCCESS action', () => {
+    const expectedAction = {
+      type: actions.LOGIN_SUCCESS
+    }
+
+    expect(actions.submitLoginSuccess()).toEqual(expectedAction);
+  });
+
+  test('should submit LOGIN_FAIL action', () => {
+    const expectedAction = {
+      type: actions.LOGIN_FAIL
+    }
+
+    expect(actions.submitLoginFail()).toEqual(expectedAction);
+  });
+  
 });

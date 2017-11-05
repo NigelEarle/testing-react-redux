@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Header } from '../.';
 import {
   addEmail,
@@ -11,8 +12,16 @@ import {
 export class Login extends Component {
 
   static propTypes = {
-
+    email: PropTypes.string,
+    password: PropTypes.string,
+    user: PropTypes.object
   };
+
+  static defaultProps = {
+    email: '',
+    password: '',
+    user: {}
+  }
 
   handleInputChange = ({ target }) => {
     const {

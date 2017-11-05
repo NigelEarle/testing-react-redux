@@ -35,8 +35,7 @@ describe('User Actions', () => {
     const expectedAction = {
       type: actions.LOGIN_FAIL
     }
-
     expect(actions.submitLoginFail()).toEqual(expectedAction);
   });
-  
+
 });

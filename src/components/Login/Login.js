@@ -8,7 +8,7 @@ import {
   submitLoginFail,
 } from '../../actions/user';
 
-class Login extends Component {
+export class Login extends Component {
 
   static propTypes = {
 

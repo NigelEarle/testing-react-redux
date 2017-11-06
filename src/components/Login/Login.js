@@ -49,7 +49,6 @@ export class Login extends Component {
     e.preventDefault();
     // if email and password matches user.email/password submit success
     // else submitFail
-
   }
 
   render() {

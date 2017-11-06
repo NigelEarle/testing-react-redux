@@ -14,13 +14,21 @@ export class Login extends Component {
   static propTypes = {
     email: PropTypes.string,
     password: PropTypes.string,
-    user: PropTypes.object
+    user: PropTypes.object,
+    addEmail: PropTypes.func.isRequired,
+    addPassword: PropTypes.func.isRequired,
+    submitLoginSuccess: PropTypes.func.isRequired,
+    submitLoginFail: PropTypes.func.isRequired
   };
 
   static defaultProps = {
     email: '',
     password: '',
-    user: {}
+    user: {},
+    addEmail: () => {},
+    addPassword: () => {},
+    submitLoginSuccess: () => {},
+    submitLoginFail: () => {}
   }
 
   handleInputChange = ({ target }) => {
@@ -29,12 +37,10 @@ export class Login extends Component {
       addPassword,
     } = this.props;
     if (target.name === 'email') {
-      // email action
       addEmail(target.value);
     }
 
     if (target.name === 'password') {
-      // password action
       addPassword(target.value);
     }
   }

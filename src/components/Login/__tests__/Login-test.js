@@ -1,8 +1,11 @@
 import React from 'react';
-import ConnectedLogin, { Login } from '../Login';
-import Header from './../../Header/Header'
 import { Provider } from 'react-redux';
 import { shallow } from 'enzyme';
+import configureStore from 'redux-mock-store';
+import createStore from 'redux';
+
+import ConnectedLogin, { Login } from '../Login';
+import Header from './../../Header/Header';
 
 
 
@@ -75,7 +78,31 @@ describe('Login Component', () => {
 
       submitForm.simulate('submit', { preventDefault });
       expect(props.submitLoginSuccess.mock.calls).toHaveLength(0);
-    })
+    });
   })
+
+  describe('Connected Login', () => {
+    let wrapper = null;
+    let store = null;
+
+    let initialState = {
+      emailToTest: 'user@email.com',
+      passwordToTest: '12345',
+    };
+
+    beforeEach(() => {
+      const mockStore = configureStore();
+      store = mockStore();
+      wrapper = shallow(<Provider store={store}><ConnectedLogin/></Provider>);
+    });
+
+    it('should be connected', () => {
+      expect(wrapper.find(ConnectedLogin)).toHaveLength(1);
+    });
+
+    it('should match `props.emailToTest`', () => {});
+
+    it('should match `props.passwordToTest`', () => {});
+  });
 })
 
